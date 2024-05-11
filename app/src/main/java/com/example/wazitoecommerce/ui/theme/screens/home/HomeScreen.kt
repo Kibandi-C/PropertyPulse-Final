@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
@@ -59,6 +60,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.wazitoecommerce.R
 import com.example.wazitoecommerce.navigation.ADD_PROPERTY_URL
+import com.example.wazitoecommerce.navigation.LOGIN_URL
 import com.example.wazitoecommerce.navigation.VIEW_PROPERTY_URL
 import com.example.wazitoecommerce.ui.theme.NewBlue
 import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
@@ -81,6 +83,11 @@ fun HomeScreen(navController:NavHostController){
                 navigationIcon = { }, actions = {
                     IconButton(onClick = { navController.navigate(ADD_PROPERTY_URL) }) {
                         Icon(imageVector = Icons.Default.Add,
+                            contentDescription ="settings",
+                            tint = Color.White ) }
+
+                    IconButton(onClick = { navController.navigate(LOGIN_URL) }) {
+                        Icon(imageVector = Icons.Default.ExitToApp,
                             contentDescription ="settings",
                             tint = Color.White ) }
                 })

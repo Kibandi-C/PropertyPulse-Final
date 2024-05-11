@@ -246,7 +246,7 @@ fun PropertyItem(
     }
 
 
-        Row (horizontalArrangement = Arrangement.Center){
+        Row (horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically){
             Button(onClick = {
                 propertyRepository.deleteProperty(id)
             }) {
