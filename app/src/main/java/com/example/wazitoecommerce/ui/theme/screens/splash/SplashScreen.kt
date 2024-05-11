@@ -5,9 +5,14 @@ import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -59,6 +64,21 @@ fun SplashScreen(navController:NavHostController){
                     .fillMaxWidth()
                     .padding(top = 10.dp, bottom = 7.dp)
             )
+        
+        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(
+            onClick = {
+                navController.navigate(LOGIN_URL)
+            },
+
+        ) {
+            Text(
+                text = "Get Started",
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp
+            )
+        }
 
 
 

@@ -24,6 +24,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
@@ -64,6 +65,7 @@ import com.example.wazitoecommerce.data.PropertyViewModel
 import com.example.wazitoecommerce.models.Property
 import com.example.wazitoecommerce.navigation.ADD_PROPERTY_URL
 import com.example.wazitoecommerce.navigation.FAVORITES_URL
+import com.example.wazitoecommerce.navigation.LOGIN_URL
 import com.example.wazitoecommerce.ui.theme.NewBlue
 import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
 import com.example.wazitoecommerce.ui.theme.lBlue
@@ -98,14 +100,11 @@ fun ViewPropertyScreen(navController:NavHostController) {
                 TopAppBar(title = { Text(text = "PropertyPulse", color = Color.White, fontWeight = FontWeight.ExtraBold) },
                     colors = TopAppBarDefaults.mediumTopAppBarColors(Color.Blue),
                     navigationIcon = { }, actions = {
-                        IconButton(onClick = { navController.navigate(FAVORITES_URL) }) {
-                            Icon(imageVector = Icons.Default.Favorite,
+                        IconButton(onClick = { navController.navigate(LOGIN_URL) }) {
+                            Icon(imageVector = Icons.Default.ExitToApp,
                                 contentDescription ="add",
                                 tint = Color.White ) }
-                        IconButton(onClick = { navController.navigate(ADD_PROPERTY_URL) }) {
-                            Icon(imageVector = Icons.Default.AddCircle,
-                                contentDescription ="settings",
-                                tint = Color.White ) }
+
                     })
                 //END OF TOP APP BAR
             }
