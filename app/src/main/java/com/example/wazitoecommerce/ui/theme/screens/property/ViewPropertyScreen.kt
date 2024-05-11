@@ -263,9 +263,7 @@ fun PropertyItem(
 
             Spacer(modifier = Modifier.width(5.dp))
 
-            Button(onClick = {}) {
-                Text(text = "Add to Favorites")
-            }
+
         }
 
 }

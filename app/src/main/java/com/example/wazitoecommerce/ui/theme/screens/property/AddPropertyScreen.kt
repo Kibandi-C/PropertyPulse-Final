@@ -25,6 +25,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
@@ -69,6 +70,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.wazitoecommerce.data.PropertyViewModel
 import com.example.wazitoecommerce.navigation.ADD_PROPERTY_URL
+import com.example.wazitoecommerce.navigation.LOGIN_URL
 import com.example.wazitoecommerce.navigation.SEARCH_URL
 import com.example.wazitoecommerce.navigation.VIEW_PROPERTY_URL
 import com.example.wazitoecommerce.ui.theme.NewBlue
@@ -156,12 +158,8 @@ fun AddPropertyScreen(navController:NavHostController){
                     TopAppBar(title = { Text(text = "PropertyPulse", color = Color.White, fontWeight = FontWeight.ExtraBold) },
                         colors = TopAppBarDefaults.mediumTopAppBarColors(Color.Blue),
                         navigationIcon = { }, actions = {
-                            IconButton(onClick = { navController.navigate(VIEW_PROPERTY_URL) }) {
-                                Icon(imageVector = Icons.Default.Search,
-                                    contentDescription ="add",
-                                    tint = Color.White ) }
-                            IconButton(onClick = { navController.navigate(ADD_PROPERTY_URL) }) {
-                                Icon(imageVector = Icons.Default.AddCircle,
+                            IconButton(onClick = { navController.navigate(LOGIN_URL) }) {
+                                Icon(imageVector = Icons.Default.ExitToApp,
                                     contentDescription ="settings",
                                     tint = Color.White ) }
                         })

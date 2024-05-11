@@ -19,7 +19,7 @@ import com.example.wazitoecommerce.ui.theme.screens.splash.SplashScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController:NavHostController = rememberNavController(),
-    startDestination:String = LOGIN_URL
+    startDestination:String = ADD_PROPERTY_URL
 ){
     NavHost(
         navController = navController,

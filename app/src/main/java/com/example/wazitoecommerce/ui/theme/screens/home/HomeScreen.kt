@@ -59,7 +59,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.wazitoecommerce.R
 import com.example.wazitoecommerce.navigation.ADD_PROPERTY_URL
-import com.example.wazitoecommerce.navigation.FAVORITES_URL
 import com.example.wazitoecommerce.navigation.VIEW_PROPERTY_URL
 import com.example.wazitoecommerce.ui.theme.NewBlue
 import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
