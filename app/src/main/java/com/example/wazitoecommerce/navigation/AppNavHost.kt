@@ -6,7 +6,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.wazitoecommerce.ui.theme.screens.favorites.FavoritesScreen
 import com.example.wazitoecommerce.ui.theme.screens.home.HomeScreen
 import com.example.wazitoecommerce.ui.theme.screens.login.LoginScreen
 import com.example.wazitoecommerce.ui.theme.screens.property.AddPropertyScreen
@@ -36,9 +35,7 @@ fun AppNavHost(
             HomeScreen(navController = navController)
         }
             //added
-        composable(FAVORITES_URL){
-            FavoritesScreen(navController = navController)
-        }
+
         composable(ADD_PROPERTY_URL){
             AddPropertyScreen(navController = navController)
         }
