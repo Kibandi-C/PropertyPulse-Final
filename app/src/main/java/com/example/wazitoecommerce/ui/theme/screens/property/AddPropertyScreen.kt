@@ -125,14 +125,6 @@ fun AddPropertyScreen(navController:NavHostController){
         },
 
 
-        floatingActionButton = {
-            FloatingActionButton(onClick = { /*TODO*/ }) {
-                IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Default.Add,
-                        contentDescription = "menu")
-                }
-            }
-        },
         //Content Section
         content = @Composable
         {

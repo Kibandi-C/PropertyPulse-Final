@@ -245,25 +245,7 @@ fun PropertyItem(
     }
 
 
-        Row (horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically){
-            Button(onClick = {
-                propertyRepository.deleteProperty(id)
-            }) {
-                Text(text = "Delete")
-            }
-            
-            Spacer(modifier = Modifier.width(5.dp))
-            
-            Button(onClick = {
-                //navController.navigate(ROUTE_UPDATE_PRODUCTS+"/$id")
-            }) {
-                Text(text = "Update")
-            }
 
-            Spacer(modifier = Modifier.width(5.dp))
-
-
-        }
 
 }
 
