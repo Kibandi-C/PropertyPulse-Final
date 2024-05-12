@@ -71,7 +71,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.wazitoecommerce.data.PropertyViewModel
 import com.example.wazitoecommerce.navigation.ADD_PROPERTY_URL
 import com.example.wazitoecommerce.navigation.LOGIN_URL
-import com.example.wazitoecommerce.navigation.SEARCH_URL
 import com.example.wazitoecommerce.navigation.VIEW_PROPERTY_URL
 import com.example.wazitoecommerce.ui.theme.NewBlue
 import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
@@ -82,7 +81,6 @@ import com.example.wazitoecommerce.ui.theme.screens.home.BottomNavItem
 @Composable
 //the upload screen
 fun AddPropertyScreen(navController:NavHostController){
-    var mContext = LocalContext.current
 
 //start bottom bar
     var selected by remember { mutableIntStateOf(0) }
@@ -214,7 +212,7 @@ fun AddPropertyScreen(navController:NavHostController){
                         var propertyLocation by remember { mutableStateOf("") }
                         var phoneNumber by remember { mutableStateOf("") }
                         var id by remember { mutableStateOf("") }
-                        var filepath by remember { mutableStateOf("") }
+
                         //end other
                         val context = LocalContext.current
 
