@@ -109,7 +109,7 @@ fun SignupScreen(navController:NavHostController){
                     value = password,
                     onValueChange = { password = it },
                     label = { Text(text = "Password *") },
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
                 )
 
 

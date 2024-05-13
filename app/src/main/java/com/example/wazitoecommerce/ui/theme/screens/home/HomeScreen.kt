@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -66,8 +67,8 @@ import com.example.wazitoecommerce.ui.theme.NewBlue
 import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
 
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeScreen(navController:NavHostController){
     Column(
@@ -75,28 +76,26 @@ fun HomeScreen(navController:NavHostController){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Column {
-
-            //TOP APP BAR CODE
-            TopAppBar(title = { Text(text = "PropertyPulse", color = Color.White, fontWeight = FontWeight.ExtraBold) },
-                colors = TopAppBarDefaults.mediumTopAppBarColors(Color.Blue),
-                navigationIcon = { }, actions = {
-                    IconButton(onClick = { navController.navigate(ADD_PROPERTY_URL) }) {
-                        Icon(imageVector = Icons.Default.Add,
-                            contentDescription ="settings",
-                            tint = Color.White ) }
-
-                    IconButton(onClick = { navController.navigate(LOGIN_URL) }) {
-                        Icon(imageVector = Icons.Default.ExitToApp,
-                            contentDescription ="settings",
-                            tint = Color.White ) }
-                })
-            //END OF TOP APP BAR
-        }
-
         var selected by remember { mutableIntStateOf(0) }
         Scaffold(
-            bottomBar = {
+            topBar = {
+                //TOP APP BAR CODE
+                TopAppBar(title = { Text(text = "PropertyPulse", color = Color.White, fontWeight = FontWeight.ExtraBold) },
+                    colors = TopAppBarDefaults.mediumTopAppBarColors(Color.Blue),
+                    navigationIcon = { }, actions = {
+                        IconButton(onClick = { navController.navigate(ADD_PROPERTY_URL) }) {
+                            Icon(imageVector = Icons.Default.Add,
+                                contentDescription ="settings",
+                                tint = Color.White ) }
+
+                        IconButton(onClick = { navController.navigate(LOGIN_URL) }) {
+                            Icon(imageVector = Icons.Default.ExitToApp,
+                                contentDescription ="settings",
+                                tint = Color.White ) }
+                    })
+                //END OF TOP APP BAR
+            }
+            ,bottomBar = {
                 NavigationBar {
                     bottomNavItems.forEachIndexed { index, bottomNavItem ->
                         NavigationBarItem(
@@ -137,11 +136,11 @@ fun HomeScreen(navController:NavHostController){
             //Content Section
             content = @Composable{
                 Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ){
-                    Box {
+                    Spacer(modifier = Modifier.height(60.dp))
+                    Box (){
                         Text(
                             text = "HOME",
                             fontWeight = FontWeight.Bold,
@@ -167,19 +166,17 @@ fun HomeScreen(navController:NavHostController){
                             color = Color.White,
                             textAlign = TextAlign.Left,
                             modifier = Modifier
-                                .fillMaxSize()
                                 .padding(top = 10.dp, start = 10.dp)
                         )
 
 
-                        //posts
 
 
-                        //start of row 1
-                        Column (modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(15.dp)) {
+                        //start of option 1
+
                             Card(modifier = Modifier
+                                .padding(15.dp)
+                                .fillMaxWidth()
                                 .height(150.dp)
                                 .width(370.dp)
                                 .clickable { navController.navigate(VIEW_PROPERTY_URL) }
@@ -195,37 +192,36 @@ fun HomeScreen(navController:NavHostController){
 
 
 
-                                    Row (modifier = Modifier.align(Alignment.BottomCenter)){
-                                        Column (modifier = Modifier
-                                            .background(
-                                                brush = Brush.verticalGradient(
-                                                    colors = listOf(
-                                                        Color.Transparent,
-                                                        Color.Black
-                                                    )
+                                    Row (modifier = Modifier
+                                        .fillMaxWidth()
+                                        .align(Alignment.BottomStart)
+                                        .background(
+                                            brush = Brush.verticalGradient(
+                                                colors = listOf(
+                                                    Color.Transparent,
+                                                    Color.Black
                                                 )
                                             )
-                                            .fillMaxWidth()
-                                            .padding(7.dp)) {
+                                        )){
+
                                             Text(text = "SEE RECENT UPLOADS",
                                                 fontSize = 30.sp,
                                                 fontWeight = FontWeight.Bold,
                                                 fontFamily = FontFamily.Default,
                                                 color = Color.White,
                                                 textAlign = TextAlign.Center
+
                                             )
 
                                             Spacer(modifier = Modifier.height(5.dp))
 
-                                        }
+
                                     }
 
                                 }
 
 
-                            }
-
-                        }//end of row 1
+                            } //end of option 1
 
 
 
@@ -233,7 +229,6 @@ fun HomeScreen(navController:NavHostController){
 
 
 
-                        // end posts
 
                     }
 

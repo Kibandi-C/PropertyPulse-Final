@@ -5,6 +5,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavHostController
 import com.example.wazitoecommerce.models.User
+import com.example.wazitoecommerce.navigation.ADD_PROPERTY_URL
 import com.example.wazitoecommerce.navigation.HOME_URL
 import com.example.wazitoecommerce.navigation.LOGIN_URL
 import com.google.firebase.auth.FirebaseAuth
