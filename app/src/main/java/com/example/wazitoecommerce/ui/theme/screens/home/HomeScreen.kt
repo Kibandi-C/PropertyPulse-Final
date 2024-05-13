@@ -7,22 +7,17 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ExitToApp
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Home
@@ -140,7 +135,7 @@ fun HomeScreen(navController:NavHostController){
                     horizontalAlignment = Alignment.CenterHorizontally
                 ){
                     Spacer(modifier = Modifier.height(60.dp))
-                    Box (){
+                    Box {
                         Text(
                             text = "HOME",
                             fontWeight = FontWeight.Bold,
@@ -166,62 +161,52 @@ fun HomeScreen(navController:NavHostController){
                             color = Color.White,
                             textAlign = TextAlign.Left,
                             modifier = Modifier
+                                .fillMaxWidth()
                                 .padding(top = 10.dp, start = 10.dp)
+
                         )
 
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        //start option
+                        Card(modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(15.dp)
+                            .width(200.dp)
+                            .height(110.dp)
+                            .clickable { navController.navigate(VIEW_PROPERTY_URL) }
+                        ) {
+
+                            Box {
 
 
-
-                        //start of option 1
-
-                            Card(modifier = Modifier
-                                .padding(15.dp)
-                                .fillMaxWidth()
-                                .height(150.dp)
-                                .width(370.dp)
-                                .clickable { navController.navigate(VIEW_PROPERTY_URL) }
-                            ) {
-
-                                Box (modifier = Modifier.fillMaxWidth(),
-                                    contentAlignment = Alignment.Center){
-
-                                    Image(painter = painterResource(id = R.drawable.nicehome),
-                                        contentDescription = "usa",
-                                        modifier = Modifier.fillMaxSize(),
-                                        contentScale = ContentScale.Crop)
-
-
-
-                                    Row (modifier = Modifier
+                                Text(text = "SEE RECENT UPLOADS",
+                                    fontSize = 30.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    fontFamily = FontFamily.Default,
+                                    color = Color.White,
+                                    textAlign = TextAlign.Left,
+                                    modifier = Modifier
                                         .fillMaxWidth()
-                                        .align(Alignment.BottomStart)
                                         .background(
                                             brush = Brush.verticalGradient(
                                                 colors = listOf(
-                                                    Color.Transparent,
-                                                    Color.Black
+                                                    Color.Black,
+                                                    Color.Transparent
                                                 )
                                             )
-                                        )){
 
-                                            Text(text = "SEE RECENT UPLOADS",
-                                                fontSize = 30.sp,
-                                                fontWeight = FontWeight.Bold,
-                                                fontFamily = FontFamily.Default,
-                                                color = Color.White,
-                                                textAlign = TextAlign.Center
+                                        )
+                                )
+                            }
 
-                                            )
-
-                                            Spacer(modifier = Modifier.height(5.dp))
+                        }
+                        //end option
 
 
-                                    }
-
-                                }
 
 
-                            } //end of option 1
+
 
 
 
