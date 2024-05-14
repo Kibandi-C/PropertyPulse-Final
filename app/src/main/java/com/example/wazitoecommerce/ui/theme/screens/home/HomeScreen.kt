@@ -177,8 +177,14 @@ fun HomeScreen(navController:NavHostController){
                             .clickable { navController.navigate(VIEW_PROPERTY_URL) }
                         ) {
 
-                            Box {
+                            Box (contentAlignment = Alignment.BottomStart) {
 
+                                Image(
+                                    painter = painterResource(id = R.drawable.homepage2),
+                                    contentDescription = "usa",
+                                    modifier = Modifier.fillMaxSize(),
+                                    contentScale = ContentScale.Crop
+                                )
 
                                 Text(text = "SEE RECENT UPLOADS",
                                     fontSize = 30.sp,
@@ -191,8 +197,8 @@ fun HomeScreen(navController:NavHostController){
                                         .background(
                                             brush = Brush.verticalGradient(
                                                 colors = listOf(
-                                                    Color.Black,
-                                                    Color.Transparent
+                                                    Color.Transparent,
+                                                    Color.Black
                                                 )
                                             )
 
